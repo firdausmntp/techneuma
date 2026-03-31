@@ -1,5 +1,5 @@
 {
-  "name": "impeccable",
+  "name": "techneuma",
   "version": "1.5.1",
   "author": "Paul Bakaus",
   "dependencies": {
@@ -32,5 +32,15 @@
   "type": "module",
   "devDependencies": {
     "wrangler": "^4.71.0"
-  }
+  },
+  "bin": {
+    "techneuma": "./bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "README.md",
+    "LICENSE",
+    "NOTICE.md"
+  ]
 }

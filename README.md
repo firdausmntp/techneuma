@@ -51,9 +51,24 @@ Take control of your AI's output using precision commands directly in your promp
 
 ## 🚀 Installation & Setup
 
-Techneuma is designed to compile directly into the native formats required by major AI companions. 
+Techneuma is incredibly easy to install locally for your specific IDE using our official `npx` CLI scaffolding!
 
-First, clone the repository and run the build:
+### 1. Zero-dependency Installation (NPM)
+Navigate to your project root and simply run:
+```bash
+# E.g. npx techneuma init cursor
+npx techneuma init <provider>
+```
+
+**Available Providers:**
+- `cursor` (.cursor)
+- `claude` (.claude)
+- `agents` (VS Code Copilot .agents)
+- `gemini` (.gemini)
+- `codex` (.codex)
+
+### 2. Manual Clone & Build (For Contributors)
+If you want to contribute, clone the repository and run the build:
 ```bash
 bun install
 bun run build
