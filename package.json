@@ -7,15 +7,20 @@
     "motion": "^12.23.26",
     "playwright": "^1.57.0"
   },
-  "description": "Cross-provider design skills and commands for LLM-powered development tools",
+  "description": "Techneuma: A comprehensive collection of 50+ cross-provider AI agent skills and commands for Cursor, Claude Code, Gemini, and Codex.",
   "keywords": [
+    "techneuma",
+    "ai",
+    "agent",
+    "skills",
     "cursor",
     "claude",
     "gemini",
     "codex",
-    "design",
+    "development",
     "frontend",
-    "ux"
+    "backend",
+    "security"
   ],
   "license": "SEE LICENSE FILE",
   "scripts": {
