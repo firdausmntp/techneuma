@@ -1,7 +1,7 @@
 {
   "name": "techneuma",
-  "version": "1.5.1",
-  "author": "Paul Bakaus",
+  "version": "0.0.1",
+  "author": "Firdaus Satrio Utomo Fork From Paul Bakaus",
   "dependencies": {
     "archiver": "^7.0.1",
     "motion": "^12.23.26",
