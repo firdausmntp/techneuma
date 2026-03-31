@@ -1,120 +1,104 @@
-# ⚡ Techneuma
+<div align="center">
+  
+  # ⚡ TECHNEUMA ⚡
+  
+  **The Ultimate Cross-Provider AI Skill & Command Library**
+  
+  [![NPM Version](https://img.shields.io/npm/v/techneuma?style=for-the-badge&color=ff69b4)](https://www.npmjs.com/package/techneuma)
+  [![NPM Downloads](https://img.shields.io/npm/dt/techneuma?style=for-the-badge&color=blue)](https://www.npmjs.com/package/techneuma)
+  [![License](https://img.shields.io/badge/License-Apache_2.0-blueviolet?style=for-the-badge)](LICENSE)
 
-> **The ultimate multi-domain AI skill library.** Equip your AI codebase assistants with 52 expert technical skills, 20 precise steering commands, and strict architectural DOs & DON'Ts.
+  *Equip your AI assistants with 52 expert technical skills, 20 precise steering commands, <br>and strict architectural DOs & DON'Ts for production-grade software.*
 
-Every LLM learned from the same generic templates. Without guidance, you get predictable mistakes: non-semantic HTML, terrible variable naming, monolithic components, and generic "AI slop" aesthetics. 
+</div>
 
-**Techneuma fights that bias.** Evolved from core concepts like Anthropic's `frontend-design` and the *Impeccable* system, Techneuma has grown into a massive powerhouse covering frontend, backend, native mobile, infrastructure, and QA domains.
+<br>
 
-### ✨ What's Inside Techneuma?
+> ⚠️ **The Problem:** Every LLM learns from the same generic templates. Without guidance, you get predictable mistakes: non-semantic HTML, terrible variable naming, monolithic components, and generic "AI slop" aesthetics.
+>
+> 💡 **The Solution:** **Techneuma fights that bias.** Evolved from core concepts like Anthropic's `frontend-design` and the *Impeccable* system, Techneuma is a massive powerhouse covering frontend, backend, native mobile, infrastructure, and QA domains.
 
-- **52 Specialized AI Skills**: Deep domain expertise across massive technology stacks (`react`, `angular`, `vue`, `svelte`, `nextjs`, `flutter`), infrastructure (`docker`, `devops`), backend (`api-design`, `database`, `graphql`), and broad domains (`security-review`, `performance`).
-- **Strict DOs & DON'Ts**: Every skill comes equipped with an intensive `examples.md` library detailing EXACTLY how the AI should code, and what "lazy" patterns to aggressively avoid.
-- **20 Steering Commands**: Specialized invocation commands (like `/audit`, `/harden`, `/polish`) to direct your AI mid-conversation.
-- **Universal Build System**: One source of truth automatically compiles into optimized assets for 8+ native AI runtime extensions.
+---
+
+## 🚀 Quick Installation (NPM)
+
+Techneuma is fully interactive and installs in seconds. Open your terminal at your project root and run:
+
+```bash
+npx techneuma init <provider>
+```
+
+**Supported Providers:**
+- `cursor` (Generated in `.cursor/`)
+- `claude` (Generated in `.claude/`)
+- `agents` (VS Code GitHub Copilot in `.agents/`)
+- `gemini` (Generated in `.gemini/`)
+- `codex` (Generated in `.codex/`)
+
+*Read more on [npmjs.com/package/techneuma](https://www.npmjs.com/package/techneuma)*
 
 ---
 
 ## 🛠️ The 52-Skill Arsenal
 
-Techneuma injects expert-level knowledge across multiple software paradigms. Here is a sneak peek of the disciplines included:
+Techneuma injects expert-level knowledge across multiple software paradigms. Instead of generic AI output, your agent becomes a senior engineer in these specific stacks:
 
 ### 🎨 Frontend & Mobile
-`react`, `react-native`, `vue`, `svelte`, `angular`, `nextjs`, `flutter`, `tailwind`, `frontend-design`, `state-management`
+`react` `react-native` `vue` `svelte` `angular` `nextjs` `flutter` `tailwind` `frontend-design` `state-management` `accessibility`
 
 ### ⚙️ Backend & Architecture
-`backend-design`, `api-design`, `graphql`, `websockets`, `database`, `monorepo`, `electron`, `cli`, `headless-cms`
+`backend-design` `api-design` `graphql` `websockets` `database` `monorepo` `electron` `cli` `headless-cms` `llm-integration` 
 
 ### 🔒 Security, QA & Infrastructure
-`security-review`, `devops-delivery`, `docker`, `testing`, `qa-strategy`, `performance`, `accessibility`, `llm-integration`
+`security-review` `devops-delivery` `docker` `testing` `qa-strategy` `performance`
 
 ---
 
-## 🕹️ The 20 Steering Commands
+## 🕹️ 20 Precision Steering Commands
 
-Take control of your AI's output using precision commands directly in your prompt:
+Take absolute control of your AI's output using precision commands directly in your chat prompt. Tell the AI exactly how to behave mid-conversation.
 
-| Command | Action |
-|---------|--------------|
+| Command | Action / Behavior |
+|:---|:---|
+| 🛡️ **Architecture & Integrity:** | |
 | `/audit` | Run deep technical checks (a11y, performance, responsive, security). |
-| `/critique` | UX / Architecture review based on heuristics. |
+| `/critique` | UX / Architecture review based on firm heuristics. |
 | `/normalize` | Align code with strict design system and repo standards. |
+| `/security-review` | Thoroughly assess code for vulnerabilities and exposures. |
+| 🧹 **Refactoring & Cleanup:** | |
 | `/polish` | The final 10% — flawless cleanup before shipping. |
 | `/distill` | Strip away unnecessary complexity (KISS principle). |
 | `/harden` | Bulletproof error handling, edge cases, and typing. |
 | `/optimize` | Maximize performance, tree-shaking, and rendering. |
-| `/overdrive` | Push boundaries with technically extraordinary solutions. |
 | `/extract` | Refactor inline code into reusable, atomic components. |
-| *(Quick Fixes)* | `/adapt`, `/animate`, `/arrange`, `/colorize`, `/clarify`, `/bolder`, `/quieter`, `/delight`, `/onboard`, `/teach-impeccable`, `/typeset` |
+| 🚀 **Execution & Styling:** | |
+| `/overdrive` | Push boundaries with technically extraordinary solutions. |
+| *(Quick Modifiers)* | `/adapt`, `/animate`, `/arrange`, `/colorize`, `/clarify`, `/bolder`, `/quieter`, `/delight`, `/onboard`, `/teach-impeccable`, `/typeset` |
 
 ---
 
-## 🚀 Installation & Setup
+## 💡 How It Works / Usage
 
-Techneuma is incredibly easy to install locally for your specific IDE using our official `npx` CLI scaffolding!
+Once installed mapping folders (like `.cursor/` or `.agents/`) are placed in your workspace. From there, your AI automatically understands the custom framework.
 
-### 1. Zero-dependency Installation (NPM)
-Navigate to your project root and simply run:
+**Examples of how to talk to your AI:**
+> *"Please `/audit` the authentication flow in `auth.ts` and ensure it follows our `/security-review` standards."*
+
+> *"Build a new hero section. Make it `/bolder` and `/animate` the entry sequences."*
+
+---
+
+## 📦 Manual Build (For Contributors)
+
+Techneuma uses a Universal Build System: One source of truth automatically compiles into optimized assets for 8+ native AI runtime extensions.
+
 ```bash
-# E.g. npx techneuma init cursor
-npx techneuma init <provider>
-```
-
-**Available Providers:**
-- `cursor` (.cursor)
-- `claude` (.claude)
-- `agents` (VS Code Copilot .agents)
-- `gemini` (.gemini)
-- `codex` (.codex)
-
-### 2. Manual Clone & Build (For Contributors)
-If you want to contribute, clone the repository and run the build:
-```bash
+git clone https://github.com/firdausmntp/techneuma.git
+cd techneuma
 bun install
 bun run build
 ```
-*(The `dist/` folder now contains universally compatible outputs for 8+ AI tools!)*
-
-### 💻 VS Code / GitHub Copilot Agents
-Techneuma natively supports modern VS Code Copilot `.agents` architectures.
-```bash
-cp -r dist/agents/.agents your-project/
-```
-
-### 🪄 Cursor
-Copy the generated Cursor configurations directly into your workspace:
-```bash
-cp -r dist/cursor/.cursor your-project/
-```
-*(Requires Agent Skills to be enabled in Cursor Settings)*
-
-### 🤖 Claude Code
-Add to a specific project, or your global Claude config:
-```bash
-# Project-specific
-cp -r dist/claude-code/.claude your-project/
-
-# Global (applies to all projects)
-cp -r dist/claude-code/.claude/* ~/.claude/
-```
-
-### ⚡ Other Supported Harnesses
-Simply copy the generated folders from `dist/` for:
-- **Gemini CLI** (`.gemini`)
-- **Codex CLI** (`.codex`)
-- **OpenCode** (`.opencode`)
-- **Pi** (`.pi`)
-- **Kiro** (`.kiro`)
-
----
-
-## 💡 Usage Highlights
-
-Once the `.agents`, `.cursor` or `.claude` folders are dropped into your workspace, invoke the commands in your chat interface!
-
-> **You:** "Please `/audit` the authentication flow in `auth.ts` and ensure it follows our `/security-review` standards."
-
-> **You:** "Build a new hero section. Make it `/bolder` and `/animate` the entry sequences."
+*(The `dist/` folder now contains universally compatible outputs for Cursor, Claude, VS Code Agents, Gemini, and Codex!)*
 
 ---
 
@@ -122,11 +106,14 @@ Once the `.agents`, `.cursor` or `.claude` folders are dropped into your workspa
 
 We welcome structural improvements, new domains, and refined AI heuristics.
 1. Add new skill definitions to `source/skills/`.
-2. Document rigorous DO/DON'T metrics in a nested `reference/examples.md` files for your skill.
+2. Document rigorous DO/DON'T metrics in a nested `reference/examples.md` file for your skill.
 3. Verify output counts via `bun run build`.
 
 See [DEVELOP.md](DEVELOP.md) for deeper architectural insights.
 
 ---
-**License**: Apache 2.0. See [LICENSE](LICENSE).  
-*Core architectural systems adapted from Anthropic's frontend-design and Impeccable.*
+
+<div align="center">
+  <b>License</b>: Apache 2.0 | Brought to you with 💙 by Firdaus Satrio Utomo & open-source contributors. <br>
+  <i>Core architectural systems adapted from Anthropic's frontend-design and Paul Bakaus' Impeccable.</i>
+</div>
