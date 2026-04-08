@@ -27,6 +27,16 @@ import {
 	transformKiro,
 	transformOpenCode,
 	transformPi,
+	transformWindsurf,
+	transformCline,
+	transformAider,
+	transformAmp,
+	transformContinue,
+	transformZed,
+	transformJetbrains,
+	transformVoid,
+	transformPearai,
+	transformQwen,
 } from "./lib/transformers/index.js";
 import {
 	readPatterns,
@@ -163,6 +173,16 @@ function assembleUniversal(distDir, suffix = "") {
 		{ provider: "kiro", configDir: ".kiro" },
 		{ provider: "opencode", configDir: ".opencode" },
 		{ provider: "pi", configDir: ".pi" },
+		{ provider: "windsurf", configDir: ".windsurf" },
+		{ provider: "cline", configDir: ".cline" },
+		{ provider: "aider", configDir: ".aider" },
+		{ provider: "amp", configDir: ".amp" },
+		{ provider: "continue-dev", configDir: ".continue" },
+		{ provider: "zed", configDir: ".zed" },
+		{ provider: "jetbrains", configDir: ".junie" },
+		{ provider: "void", configDir: ".void" },
+		{ provider: "pearai", configDir: ".pearai" },
+		{ provider: "qwen", configDir: ".qwen" },
 	];
 
 	for (const { provider, configDir } of providerMappings) {
@@ -390,6 +410,16 @@ async function build() {
 	transformKiro(skills, DIST_DIR, patterns);
 	transformOpenCode(skills, DIST_DIR, patterns);
 	transformPi(skills, DIST_DIR, patterns);
+	transformWindsurf(skills, DIST_DIR, patterns);
+	transformCline(skills, DIST_DIR, patterns);
+	transformAider(skills, DIST_DIR, patterns);
+	transformAmp(skills, DIST_DIR, patterns);
+	transformContinue(skills, DIST_DIR, patterns);
+	transformZed(skills, DIST_DIR, patterns);
+	transformJetbrains(skills, DIST_DIR, patterns);
+	transformVoid(skills, DIST_DIR, patterns);
+	transformPearai(skills, DIST_DIR, patterns);
+	transformQwen(skills, DIST_DIR, patterns);
 
 	// Transform for each provider (prefixed with i-)
 	const prefixOptions = { prefix: "i-", outputSuffix: "-prefixed" };
@@ -401,6 +431,16 @@ async function build() {
 	transformKiro(skills, DIST_DIR, patterns, prefixOptions);
 	transformOpenCode(skills, DIST_DIR, patterns, prefixOptions);
 	transformPi(skills, DIST_DIR, patterns, prefixOptions);
+	transformWindsurf(skills, DIST_DIR, patterns, prefixOptions);
+	transformCline(skills, DIST_DIR, patterns, prefixOptions);
+	transformAider(skills, DIST_DIR, patterns, prefixOptions);
+	transformAmp(skills, DIST_DIR, patterns, prefixOptions);
+	transformContinue(skills, DIST_DIR, patterns, prefixOptions);
+	transformZed(skills, DIST_DIR, patterns, prefixOptions);
+	transformJetbrains(skills, DIST_DIR, patterns, prefixOptions);
+	transformVoid(skills, DIST_DIR, patterns, prefixOptions);
+	transformPearai(skills, DIST_DIR, patterns, prefixOptions);
+	transformQwen(skills, DIST_DIR, patterns, prefixOptions);
 
 	// Assemble universal directory (unprefixed and prefixed)
 	assembleUniversal(DIST_DIR);

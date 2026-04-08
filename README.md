@@ -7,11 +7,12 @@
 [![npm version](https://img.shields.io/npm/v/techneuma?style=for-the-badge&color=ff69b4)](https://www.npmjs.com/package/techneuma)
 [![npm downloads](https://img.shields.io/npm/dt/techneuma?style=for-the-badge&color=blue)](https://www.npmjs.com/package/techneuma)
 [![License](https://img.shields.io/badge/license-Apache_2.0-blueviolet?style=for-the-badge)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-59-brightgreen?style=for-the-badge)](https://www.npmjs.com/package/techneuma)
-[![Providers](https://img.shields.io/badge/providers-11-orange?style=for-the-badge)](https://www.npmjs.com/package/techneuma)
+[![Skills](https://img.shields.io/badge/skills-63-brightgreen?style=for-the-badge)](https://www.npmjs.com/package/techneuma)
+[![Providers](https://img.shields.io/badge/providers-21-orange?style=for-the-badge)](https://www.npmjs.com/package/techneuma)
 
-*59 expert AI agent skills · 20 steering commands · 11 providers*
+*63 expert AI agent skills · 20 steering commands · 21 providers*
 *Cursor · Claude Code · VS Code Copilot · Gemini · Codex · Kiro · OpenCode · Pi · Trae · Rovo Dev*
+*Windsurf · Cline · Aider · Amp · Continue · Zed AI · JetBrains AI · Void · PearAI · Qwen Code*
 
 </div>
 
@@ -19,7 +20,7 @@
 
 > **The Problem:** Every LLM learns from the same generic templates. Without guidance, you get non-semantic HTML, terrible variable naming, monolithic components, and "AI slop" aesthetics.
 >
-> **Techneuma fixes that.** It injects expert-level DOs & DON'Ts directly into your AI's context — turning generic assistants into senior engineers who understand React hooks, SQL injection prevention, proper CSS architecture, and 55 other specialized domains.
+> **Techneuma fixes that.** It injects expert-level DOs & DON'Ts directly into your AI's context — turning generic assistants into senior engineers who understand React hooks, SQL injection prevention, proper CSS architecture, and 59 other specialized domains.
 
 ---
 
@@ -42,6 +43,16 @@ npx techneuma init agents       # Install for VS Code Copilot
 npx techneuma init gemini       # Install for Gemini CLI
 npx techneuma init codex        # Install for Codex CLI
 npx techneuma init kiro         # Install for Kiro
+npx techneuma init windsurf     # Install for Windsurf
+npx techneuma init cline        # Install for Cline
+npx techneuma init aider        # Install for Aider
+npx techneuma init amp          # Install for Amp
+npx techneuma init continue     # Install for Continue
+npx techneuma init zed          # Install for Zed AI
+npx techneuma init jetbrains    # Install for JetBrains AI
+npx techneuma init void         # Install for Void
+npx techneuma init pearai       # Install for PearAI
+npx techneuma init qwen         # Install for Qwen Code
 npx techneuma init trae         # Install for Trae
 npx techneuma init trae-cn      # Install for Trae China
 npx techneuma init rovo-dev     # Install for Rovo Dev
@@ -56,11 +67,12 @@ npx techneuma list              # Show all available providers
 npx techneuma doctor            # Check what's installed in current dir
 npx techneuma uninstall cursor  # Remove a specific provider
 npx techneuma uninstall all     # Remove all providers
+npx techneuma init --force      # Reinstall even if already exists
 ```
 
 ---
 
-## 🛠️ The 59-Skill Arsenal
+## 🛠️ The 63-Skill Arsenal
 
 Every skill teaches your AI expert-level patterns with concrete code examples, strict DOs & DON'Ts, and anti-pattern awareness.
 
@@ -78,6 +90,7 @@ Every skill teaches your AI expert-level patterns with concrete code examples, s
 | `astro` | Island architecture, content collections, zero-JS defaults |
 | `flutter` | Dart, widget trees, cross-platform mobile |
 | `react-native` | Native modules, navigation, cross-platform patterns |
+| `vite` | Fast HMR, plugin system, build optimization, modern bundling |
 
 ### 🎨 Styling & UI
 | Skill | What It Teaches |
@@ -87,6 +100,9 @@ Every skill teaches your AI expert-level patterns with concrete code examples, s
 | `frontend-design` | Anti-slop aesthetics, distinctive production interfaces |
 | `web-components` | Custom Elements, Shadow DOM, Lit, framework-agnostic UI |
 | `htmx` | Hypermedia-driven architecture, partial page updates |
+| `storybook` | Component-driven development, testing, documentation |
+| `threejs` | 3D graphics, WebGL, animations, immersive web experiences |
+| `pwa` | Service workers, offline support, native-like capabilities |
 
 ### ⚙️ Backend & Architecture
 | Skill | What It Teaches |
@@ -159,6 +175,16 @@ Every skill teaches your AI expert-level patterns with concrete code examples, s
 | ♊ **Gemini CLI** | `.gemini/` | ✅ Full support |
 | 📦 **Codex CLI** | `.codex/` | ✅ Full support |
 | 🌀 **Kiro** | `.kiro/` | ✅ Full support |
+| 🏄 **Windsurf** | `.windsurf/` | ✅ Full support |
+| ⚡ **Cline** | `.cline/` | ✅ Full support |
+| 🛠️ **Aider** | `.aider/` | ✅ Full support |
+| 🔋 **Amp** | `.amp/` | ✅ Full support |
+| ▶️ **Continue** | `.continue/` | ✅ Full support |
+| ⚙️ **Zed AI** | `.zed/` | ✅ Full support |
+| 🧠 **JetBrains AI** | `.junie/` | ✅ Full support |
+| 🕳️ **Void** | `.void/` | ✅ Full support |
+| 🍐 **PearAI** | `.pearai/` | ✅ Full support |
+| 🐼 **Qwen Code** | `.qwen/` | ✅ Full support |
 | 🧩 **Rovo Dev** | `.rovodev/` | ✅ Full support |
 | 🔺 **Trae** | `.trae/` | ✅ Full support |
 | 🔻 **Trae China** | `.trae-cn/` | ✅ Full support |
@@ -191,7 +217,7 @@ Make it /bolder and /animate the entry."
 git clone https://github.com/firdausmntp/techneuma.git
 cd techneuma
 bun install
-bun run build    # Compiles 59 skills × 8 providers into dist/
+bun run build    # Compiles 63 skills × 21 providers into dist/
 bun test         # Run test suite
 ```
 

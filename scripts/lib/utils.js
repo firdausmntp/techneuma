@@ -470,6 +470,56 @@ export const PROVIDER_PLACEHOLDERS = {
 		config_file: ".rovodev/settings.json",
 		ask_instruction: "ask the user directly to clarify what you cannot infer.",
 	},
+	windsurf: {
+		model: "the model",
+		config_file: ".windsurfrules",
+		ask_instruction: "ask the user directly to clarify what you cannot infer.",
+	},
+	cline: {
+		model: "the model",
+		config_file: ".clinerules",
+		ask_instruction: "ask the user directly to clarify what you cannot infer.",
+	},
+	aider: {
+		model: "the model",
+		config_file: ".aider.conf.yml",
+		ask_instruction: "ask the user directly to clarify what you cannot infer.",
+	},
+	amp: {
+		model: "the model",
+		config_file: "AGENTS.md",
+		ask_instruction: "ask the user directly to clarify what you cannot infer.",
+	},
+	"continue-dev": {
+		model: "the model",
+		config_file: ".continue/config.json",
+		ask_instruction: "ask the user directly to clarify what you cannot infer.",
+	},
+	zed: {
+		model: "the model",
+		config_file: ".zed/settings.json",
+		ask_instruction: "ask the user directly to clarify what you cannot infer.",
+	},
+	jetbrains: {
+		model: "the model",
+		config_file: ".junie/guidelines.md",
+		ask_instruction: "ask the user directly to clarify what you cannot infer.",
+	},
+	void: {
+		model: "the model",
+		config_file: ".void/settings.json",
+		ask_instruction: "ask the user directly to clarify what you cannot infer.",
+	},
+	pearai: {
+		model: "the model",
+		config_file: ".pearai/config.json",
+		ask_instruction: "ask the user directly to clarify what you cannot infer.",
+	},
+	qwen: {
+		model: "Qwen",
+		config_file: ".qwen/settings.json",
+		ask_instruction: "ask the user directly to clarify what you cannot infer.",
+	},
 };
 
 /**

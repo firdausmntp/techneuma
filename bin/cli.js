@@ -15,16 +15,28 @@ const __dirname = path.dirname(__filename);
 
 // ─── Provider Registry ───────────────────────────────────────────────
 const PROVIDERS = {
-  cursor:   { folder: "cursor/.cursor",           dot: ".cursor",   label: "Cursor",                 icon: "🖱️" },
-  claude:   { folder: "claude-code/.claude",       dot: ".claude",   label: "Claude Code",            icon: "🤖" },
-  agents:   { folder: "agents/.agents",            dot: ".agents",   label: "VS Code Copilot Agents", icon: "🧑‍💻" },
-  gemini:   { folder: "gemini/.gemini",            dot: ".gemini",   label: "Gemini CLI",             icon: "♊" },
-  codex:    { folder: "codex/.codex",              dot: ".codex",    label: "Codex CLI",              icon: "📦" },
-  opencode: { folder: "opencode/.opencode",        dot: ".opencode", label: "OpenCode",               icon: "🔓" },
-  pi:       { folder: "pi/.pi",                    dot: ".pi",       label: "Pi",                     icon: "🥧" },
-  kiro:     { folder: "kiro/.kiro",                dot: ".kiro",     label: "Kiro",                   icon: "🌀" },  trae:     { folder: "trae/.trae",                    dot: ".trae",     label: "Trae",                   icon: "🔺" },
-  "trae-cn":{ folder: "trae-cn/.trae-cn",              dot: ".trae-cn",  label: "Trae China",             icon: "🔻" },
-  "rovo-dev":{ folder: "rovo-dev/.rovodev",             dot: ".rovodev",  label: "Rovo Dev",               icon: "🧩" },};
+  cursor:      { folder: "cursor/.cursor",           dot: ".cursor",     label: "Cursor",                 icon: "🖱️" },
+  claude:      { folder: "claude-code/.claude",       dot: ".claude",     label: "Claude Code",            icon: "🤖" },
+  agents:      { folder: "agents/.agents",            dot: ".agents",     label: "VS Code Copilot Agents", icon: "🧑‍💻" },
+  gemini:      { folder: "gemini/.gemini",            dot: ".gemini",     label: "Gemini CLI",             icon: "♊" },
+  codex:       { folder: "codex/.codex",              dot: ".codex",      label: "Codex CLI",              icon: "📦" },
+  opencode:    { folder: "opencode/.opencode",        dot: ".opencode",   label: "OpenCode",               icon: "🔓" },
+  pi:          { folder: "pi/.pi",                    dot: ".pi",         label: "Pi",                     icon: "🥧" },
+  kiro:        { folder: "kiro/.kiro",                dot: ".kiro",       label: "Kiro",                   icon: "🌀" },
+  trae:        { folder: "trae/.trae",                dot: ".trae",       label: "Trae",                   icon: "🔺" },
+  "trae-cn":   { folder: "trae-cn/.trae-cn",          dot: ".trae-cn",    label: "Trae China",             icon: "🔻" },
+  "rovo-dev":  { folder: "rovo-dev/.rovodev",          dot: ".rovodev",    label: "Rovo Dev",               icon: "🧩" },
+  windsurf:    { folder: "windsurf/.windsurf",        dot: ".windsurf",   label: "Windsurf",               icon: "🏄" },
+  cline:       { folder: "cline/.cline",              dot: ".cline",      label: "Cline",                  icon: "⚡" },
+  aider:       { folder: "aider/.aider",              dot: ".aider",      label: "Aider",                  icon: "🛠️" },
+  amp:         { folder: "amp/.amp",                  dot: ".amp",        label: "Amp",                    icon: "🔋" },
+  "continue":  { folder: "continue-dev/.continue",    dot: ".continue",   label: "Continue",               icon: "▶️" },
+  zed:         { folder: "zed/.zed",                  dot: ".zed",        label: "Zed AI",                 icon: "⚙️" },
+  jetbrains:   { folder: "jetbrains/.junie",          dot: ".junie",      label: "JetBrains AI (Junie)",   icon: "🧠" },
+  void:        { folder: "void/.void",                dot: ".void",       label: "Void",                   icon: "🕳️" },
+  pearai:      { folder: "pearai/.pearai",            dot: ".pearai",     label: "PearAI",                 icon: "🍐" },
+  qwen:        { folder: "qwen/.qwen",                dot: ".qwen",      label: "Qwen Code",              icon: "🐼" },
+};
 
 const PROVIDER_NAMES = Object.keys(PROVIDERS);
 
@@ -70,7 +82,7 @@ ${CYAN}${BOLD}  ╔════════════════════�
 }
 
 // ─── Install Logic ───────────────────────────────────────────────────
-function installProvider(name) {
+function installProvider(name, { force = false } = {}) {
   const provider = PROVIDERS[name];
   const srcPath = path.join(__dirname, "..", "dist", provider.folder);
   const destPath = path.join(process.cwd(), provider.dot);
@@ -81,6 +93,12 @@ function installProvider(name) {
   }
 
   const existed = fs.existsSync(destPath);
+
+  if (existed && !force) {
+    console.log(`  ${YELLOW}⚠${RESET} ${provider.icon}  ${BOLD}${provider.label}${RESET} ${DIM}already exists at ${provider.dot}/${RESET} ${DIM}[Skipped — use --force to overwrite]${RESET}`);
+    return "skipped";
+  }
+
   copyDirSync(srcPath, destPath);
   const fileCount = countFiles(destPath);
 
@@ -92,8 +110,10 @@ function installProvider(name) {
 // ─── Commands ────────────────────────────────────────────────────────
 
 async function cmdInit(providerArg) {
+  const forceFlag = args.includes("--force") || args.includes("-f");
+
   // If a specific provider was given, install it directly
-  if (providerArg) {
+  if (providerArg && providerArg !== "--force" && providerArg !== "-f") {
     const name = providerArg.toLowerCase();
     if (!PROVIDERS[name]) {
       console.log(`\n  ${RED}✗ Unknown provider: "${providerArg}"${RESET}`);
@@ -102,8 +122,9 @@ async function cmdInit(providerArg) {
     }
     banner();
     console.log(`${BOLD}  Installing skills for ${PROVIDERS[name].label}...${RESET}\n`);
-    const ok = installProvider(name);
-    if (ok) printPostInstall([name]);
+    const ok = installProvider(name, { force: forceFlag });
+    if (ok === true) printPostInstall([name]);
+    else if (ok === "skipped") printSkippedHint();
     return;
   }
 
@@ -136,11 +157,15 @@ async function cmdInit(providerArg) {
   console.log(`\n${BOLD}  Installing ${selected.length} provider(s)...${RESET}\n`);
 
   const installed = [];
+  const skipped = [];
   for (const name of selected) {
-    if (installProvider(name)) installed.push(name);
+    const result = installProvider(name, { force: forceFlag });
+    if (result === true) installed.push(name);
+    else if (result === "skipped") skipped.push(name);
   }
 
   if (installed.length > 0) printPostInstall(installed);
+  if (skipped.length > 0 && installed.length === 0) printSkippedHint();
 }
 
 function cmdList() {
@@ -216,15 +241,25 @@ function printPostInstall(names) {
   console.log();
 }
 
+function printSkippedHint() {
+  console.log(`\n  ${DIM}To overwrite existing installations, run with ${BOLD}--force${RESET}${DIM}:${RESET}`);
+  console.log(`  ${DIM}  npx techneuma init <provider> --force${RESET}`);
+  console.log();
+}
+
 function showHelp() {
   banner();
   console.log(`${BOLD}  Usage:${RESET}
   
     ${CYAN}techneuma init${RESET} ${DIM}[provider]${RESET}       Install skills (interactive if no provider given)
+    ${CYAN}techneuma init${RESET} ${DIM}[provider] -f${RESET}    Force overwrite existing installation
     ${CYAN}techneuma list${RESET}                   Show all available providers
     ${CYAN}techneuma doctor${RESET}                 Check installed providers in cwd
     ${CYAN}techneuma uninstall${RESET} ${DIM}<provider>${RESET}   Remove a provider (or 'all')
     ${CYAN}techneuma help${RESET}                   Show this help message
+
+  ${BOLD}Flags:${RESET}
+    ${DIM}--force, -f${RESET}   Overwrite existing installations
 
   ${BOLD}Providers:${RESET}
 `);
