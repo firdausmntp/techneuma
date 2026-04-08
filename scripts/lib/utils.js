@@ -455,6 +455,21 @@ export const PROVIDER_PLACEHOLDERS = {
 		config_file: "AGENTS.md",
 		ask_instruction: "ask the user directly to clarify what you cannot infer.",
 	},
+	trae: {
+		model: "the model",
+		config_file: ".trae/rules",
+		ask_instruction: "ask the user directly to clarify what you cannot infer.",
+	},
+	"trae-cn": {
+		model: "the model",
+		config_file: ".trae-cn/rules",
+		ask_instruction: "ask the user directly to clarify what you cannot infer.",
+	},
+	"rovo-dev": {
+		model: "the model",
+		config_file: ".rovodev/settings.json",
+		ask_instruction: "ask the user directly to clarify what you cannot infer.",
+	},
 };
 
 /**
